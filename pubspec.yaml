@@ -1,0 +1,86 @@
+name: douban_reading
+description: "A new Flutter project."
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  provider: ^6.0.5
+  # 语言国际化
+  flutter_localizations:
+    sdk: flutter
+  isar:
+    version: ^3.1.0+1
+    hosted: https://pub.isar-community.dev
+  isar_flutter_libs:
+    version: ^3.1.0+1
+    hosted: https://pub.isar-community.dev
+  path_provider: ^2.1.5
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  isar_generator:
+    version: ^3.1.8
+    hosted: https://pub.isar-community.dev
+  build_runner: ^2.4.13
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    # 图标
+    - assets/imgs/bookshelf.png
+    - assets/imgs/bookshelf_active.png
+    - assets/imgs/original.png
+    - assets/imgs/original_active.png
+    - assets/imgs/profile.png
+    - assets/imgs/profile_active.png
+    - assets/imgs/published.png
+    - assets/imgs/published_active.png
+    - assets/imgs/search.png
+    - assets/imgs/classification.png
+    - assets/imgs/settings.png
+    - assets/imgs/scan.png
+    - assets/imgs/light.png
+    - assets/imgs/dark.png
+    - assets/imgs/refresh.png
+    - assets/imgs/bottom.png
+    - assets/imgs/right.png
+    - assets/imgs/more.png
+
+    # 原创 - 功能
+    - assets/imgs/rank.png
+    - assets/imgs/featured.png
+    - assets/imgs/vip.png
+    - assets/imgs/fan-fic.png
+
+    # 我的 - 常用功能
+    - assets/imgs/messagecenter.png
+    - assets/imgs/shoppingcart.png
+    - assets/imgs/readinghistory.png
+    - assets/imgs/followedauthors.png
+    - assets/imgs/mypublished.png
+    - assets/imgs/notes.png
+    - assets/imgs/helpcenter.png
+    - assets/imgs/becomeauthor.png
+
+    # 头像
+    - assets/tx/tx1.jpg
+    - assets/tx/tx2.jpg
+    - assets/tx/tx3.jpg
+    - assets/tx/tx4.jpg
+
+flutter_intl:
+  enabled: true

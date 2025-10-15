@@ -1,0 +1,59 @@
+{
+  "appName": "豆瓣阅读",
+  "login": "登录",
+  "register": "注册",
+  "logout": "退出登录",
+  "email": "邮箱",
+  "password": "密码",
+  "forgotPassword": "忘记密码",
+  "home": "首页",
+  "published": "出版",
+  "discover": "发现",
+  "bookshelf": "书架",
+  "search": "搜索",
+  "settings": "设置",
+  "theme": "主题",
+  "language": "语言",
+  "about": "关于",
+  "version": "版本",
+  "copyright": "版权信息",
+  "confirm": "确认",
+  "cancel": "取消",
+  "delete": "删除",
+  "edit": "编辑",
+  "save": "保存",
+  "loading": "加载中",
+  "noMore": "没有更多了",
+  "error": "出错啦",
+  "retry": "重试",
+  "success": "成功",
+  "welcome": "欢迎回来",
+  "hintEmail": "请输入邮箱",
+  "hintPassword": "请输入密码",
+  "invalidEmail": "邮箱格式不正确",
+  "invalidPassword": "密码长度至少6位",
+
+  "@profile": {
+    "description": "我的页面标题"
+  },
+  "profile": "我的",
+  "messageCenter": "信息中心",
+  "shoppingCart": "购物车",
+  "readingHistory": "阅读记录",
+  "followedAuthors": "关注的作者",
+  "myPublished": "我发布的",
+  "notes": "笔记",
+  "helpCenter": "帮助中心",
+  "becomeAuthor": "成为作者",
+
+  "@original": {
+    "description": "原创页面标题"
+  },
+  "original": "原创",
+  "featured": "精选",
+  "romance": "言情",
+  "mystery": "悬疑",
+  "completed": "完本"
+
+
+}
