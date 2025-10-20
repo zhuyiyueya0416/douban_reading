@@ -23,15 +23,15 @@
     <td>我的 暗夜模式</td>
   </tr>
   <tr>
-    <td><img src="D:\assets\图片\豆瓣\profile.png" alt="我的"></td>
-    <td><img src="D:\assets\图片\豆瓣\mine_dark.png" alt="我的"></td>
+    <td><img src="assets/imgs/11.png" alt="我的"></td>
+    <td><img src="assets/imgs/22.png" alt="我的"></td>
   </tr>
       <tr>
     <td>原创</td>
     <td>出版</td>
   </tr>
     <tr>
-        <td><img src="D:\assets\图片\豆瓣\orgin.png"></td>
-        <td><img src="D:\assets\图片\豆瓣\published.png"></td>
+        <td><img src="assets/imgs/33.png"></td>
+        <td><img src="assets/imgs/44.png"></td>
     </tr>
 </table>
