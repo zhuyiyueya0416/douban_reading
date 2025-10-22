@@ -14,16 +14,11 @@ class FeaturedView extends StatefulWidget {
 }
 
 class _FeaturedViewState extends State<FeaturedView> {
-  Future<void> _refreshData() async {
-    await Future.delayed(Duration(seconds: 1));
-    setState(() {});
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ScrollRefreshIndicator(
-        onRefresh: _refreshData,
+      body: SingleChildScrollView(
         child: Container(
           child: Column(
             children: [

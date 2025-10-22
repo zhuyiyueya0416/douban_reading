@@ -37,7 +37,6 @@ class _profileRouteState extends State<profileRoute> {
           InkWell(onTap: () {
             Navigator.push(context, CupertinoDialogRoute(builder: ((context) => Settings()), context: context));
           },child:  Image.asset('assets/imgs/settings.png', width: 24, height: 24),),
-         // Image.asset('assets/imgs/settings.png', width: 24, height: 24),
           SizedBox(width: 10),
         ],
       ),

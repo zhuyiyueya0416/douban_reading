@@ -3,6 +3,8 @@ import 'package:douban_reading/routes/published/component/vip.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/refresh_indicator.dart';
+
 class publishedRoute extends StatefulWidget {
   @override
   _publishedRouteState createState() => _publishedRouteState();
@@ -13,6 +15,11 @@ class _publishedRouteState extends State<publishedRoute>
   List tabs = ['精选', '会员'];
 
   late TabController _tabController;
+
+  Future<void> _refreshData() async {
+    await Future.delayed(Duration(seconds: 2));
+    setState(() {});
+  }
 
   @override
   void initState() {
@@ -66,9 +73,18 @@ class _publishedRouteState extends State<publishedRoute>
         ),
       ),
       body: TabBarView(
-        //构建
         controller: _tabController,
-        children: [FeaturedView(), VipView()],
+        children: [
+
+          RefreshIndicatorWidget(
+            child: FeaturedView(),
+            onRefresh: _refreshData,
+          ),
+
+          RefreshIndicatorWidget(
+          child: FeaturedView(),
+          onRefresh: _refreshData,
+        ),],
       ),
     );
   }

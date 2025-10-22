@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../generated/l10n.dart';
+import '../../widgets/refresh_indicator.dart';
 import 'component/completed.dart';
 import 'component/featured.dart';
 import 'component/mystery.dart';
@@ -21,6 +22,11 @@ class _originalRouteState extends State<originalRoute>
  // List tabs = [S.of(context).featured, S.of(context).romance];
 
   late TabController _tabController;
+
+  Future<void> _refreshData() async {
+    await Future.delayed(Duration(seconds: 2));
+    setState(() {});
+  }
 
   @override
   void initState() {
@@ -72,16 +78,27 @@ class _originalRouteState extends State<originalRoute>
         ),
       ),
       body: TabBarView(
-        //构建
         controller: _tabController,
         children: [
-          FeaturedView(),
-          CompletedView(),
-          MysteryView(),
-
-          RomanceView(),
-        ]
+          RefreshIndicatorWidget(
+            child: FeaturedView(),
+            onRefresh: _refreshData,
+          ),
+          RefreshIndicatorWidget(
+            child: CompletedView(),
+            onRefresh: _refreshData,
+          ),
+          RefreshIndicatorWidget(
+            child: MysteryView(),
+            onRefresh: _refreshData,
+          ),
+          RefreshIndicatorWidget(
+            child: RomanceView(),
+            onRefresh: _refreshData,
+          ),
+        ],
       ),
+
     );
   }
 }
