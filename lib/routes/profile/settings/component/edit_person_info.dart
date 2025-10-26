@@ -1,4 +1,5 @@
 import 'package:douban_reading/states/auth_provider.dart';
+import 'package:douban_reading/widgets/select_avatar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -12,9 +13,6 @@ class EditPersonInfo extends StatefulWidget {
 }
 
 class _EditPersonInfoState extends State<EditPersonInfo> {
-
-
-
   void _EditdisplayName() {
     final TextEditingController displayNameController = TextEditingController();
     final currentName =
@@ -45,14 +43,13 @@ class _EditPersonInfoState extends State<EditPersonInfo> {
                       context,
                       listen: false,
                     ).updateDisplayName(newName);
-                    ScaffoldMessenger.of(
-                      context,
-                    );
+                    ScaffoldMessenger.of(context);
                     showToast(context, '修改成功!', isSuccess: true);
                   } catch (e) {
                     showToast(context, '修改失败，请重试!', isSuccess: false);
                   }
-                };
+                }
+                ;
                 Navigator.pop(context);
               },
               child: Text('确定'),
@@ -87,12 +84,11 @@ class _EditPersonInfoState extends State<EditPersonInfo> {
             children: [
               SizedBox(height: 50),
               Center(
-                child: ClipOval(
-                  child: Image.asset(
-                    'assets/tx/tx1.jpg',
-                    width: 100,
-                    height: 100,
-                  ),
+                child: SelectAvatar(
+                  size: 100,
+                  onAvatarSelected: (path) {
+                    showToast(context, '头像已经更新', isSuccess: true);
+                  },
                 ),
               ),
               SizedBox(height: 10),

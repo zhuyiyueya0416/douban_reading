@@ -16,6 +16,9 @@ dependencies:
   # 语言国际化
   flutter_localizations:
     sdk: flutter
+  # 头像上传
+  image_picker: ^1.0.7
+  # 数据库
   isar:
     version: ^3.1.0+1
     hosted: https://pub.isar-community.dev

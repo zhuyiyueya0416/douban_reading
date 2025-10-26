@@ -128,6 +128,29 @@ class AuthProvider extends ChangeNotifier {
     }
   }
 
+  // 修改头像
+  Future<void> updateUserAvatar(String avatarPath) async {
+    try {
+      if (user == null) {
+        _error = '用户未登录';
+        return;
+      }
+      _isLoading = true;
+      notifyListeners();
+
+      _user!.avatar = avatarPath;
+
+      await _isarService.saveUser(_user!);
+    } catch (e) {
+      _error = '头像更新失败: $e';
+      rethrow;
+    } finally {
+      _isLoading = false;
+      notifyListeners();
+    }
+  }
+
+
   // 获取当前登录状态
   bool get isLoggedIn => _user != null;
 

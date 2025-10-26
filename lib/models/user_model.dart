@@ -9,6 +9,7 @@ class UserModel {
   late String phone;
   late String displayName;
   late String password;
+  late String avatar;
 
   User toMain(){
     return User(
@@ -16,6 +17,7 @@ class UserModel {
       phone: phone,
       displayName: displayName,
       password: password,
+      avatar: avatar,
     );
   }
 
@@ -23,7 +25,8 @@ class UserModel {
     return UserModel()
         ..id = user.id
         ..phone = user.phone
-        ..displayName = user.displayName;
+        ..displayName = user.displayName
+        ..avatar = user.avatar;
   }
 
 }

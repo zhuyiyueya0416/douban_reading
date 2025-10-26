@@ -6,6 +6,8 @@ import 'package:provider/provider.dart';
 
 import '../../../states/auth_provider.dart';
 import '../../../widgets/book_col.dart';
+import '../../../widgets/select_avatar.dart';
+import '../../../widgets/show_toast.dart';
 import 'component/edit_person_info.dart';
 
 class ProfileInfo extends StatefulWidget {
@@ -77,16 +79,25 @@ class _ProfileInfoState extends State<ProfileInfo>
               children: [
                 Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: ClipOval(
-                        child: Image.asset(
-                          'assets/tx/tx1.jpg',
-                          width: 80,
-                          height: 80,
-                        ),
+                    Center(
+                      child: SelectAvatar(
+                        size: 70,
+                        onAvatarSelected: (path) {
+                          showToast(context, '头像已经更新', isSuccess: true);
+                        },
                       ),
                     ),
+                    SizedBox(width: 10,),
+                    // Padding(
+                    //   padding: const EdgeInsets.all(10),
+                    //   child: ClipOval(
+                    //     child: Image.asset(
+                    //       'assets/tx/tx1.jpg',
+                    //       width: 80,
+                    //       height: 80,
+                    //     ),
+                    //   ),
+                    // ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -98,8 +109,8 @@ class _ProfileInfoState extends State<ProfileInfo>
                             );
                           },
                         ),
-                        Text('data'),
-                        Text('data'),
+                        Text('关注 3  被关注 0'),
+                        Text('IP属地'),
                       ],
                     ),
                   ],

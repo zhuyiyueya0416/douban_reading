@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:douban_reading/routes/profile/settings/profile_info.dart';
 import 'package:douban_reading/states/auth_provider.dart';
 import 'package:flutter/cupertino.dart';
@@ -5,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../common/colors.dart';
+import '../../../widgets/build_avatar.dart';
 import '../../../widgets/build_texticon.dart';
 import '../../../widgets/largetext_style.dart';
 import '../settings/component/edit_person_info.dart';
@@ -15,6 +18,7 @@ class PersonInfo extends StatefulWidget {
 }
 
 class _SimpleInfoState extends State<PersonInfo> {
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -34,16 +38,19 @@ class _SimpleInfoState extends State<PersonInfo> {
         children: [
           Padding(
             padding: const EdgeInsets.all(10),
-            child: InkWell(
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => EditPersonInfo()),
+            child: Consumer<AuthProvider>(
+              builder: (context,authProvider,child) {
+                return InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => EditPersonInfo()),
+                    );
+                  },
+                  child: ClipOval(child: buildAvatar(authProvider.user?.avatar),),
+                  //child: ClipOval(child:  Image.asset(authProvider.user?.avatar ?? 'assets/tx/tx1.jpg', width: 80, height: 80,fit: BoxFit.cover,),)
                 );
               },
-              child: ClipOval(
-                child: Image.asset('assets/tx/tx1.jpg', width: 80, height: 80),
-              ),
             ),
           ),
           Expanded(
